@@ -8,7 +8,7 @@ import java.util.Set;
 //@Data
 //@Getter
 //@Setter
-public class OldUser {
+public class User {
     @Id
     @GeneratedValue
     private Long id;
@@ -83,7 +83,7 @@ public class OldUser {
         this.id = id;
     }
 
-    @OneToMany(mappedBy="oldUser", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="user", cascade = CascadeType.ALL)
     private Set<Order> orders;
 //    @ManyToOne
 //    @JoinColumn(name="order_id", nullable=false)

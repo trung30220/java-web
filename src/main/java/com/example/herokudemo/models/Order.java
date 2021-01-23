@@ -27,7 +27,7 @@ public class Order {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
-    private OldUser oldUser;
+    private User user;
 //    @OneToMany(mappedBy="order")
 //    private Set<User> items;
 }

@@ -19,12 +19,12 @@ public class Subject {
         Subject subject = (Subject) o;
         return Objects.equals(id, subject.id) &&
                 Objects.equals(name, subject.name) &&
-                Objects.equals(oldUserSet, subject.oldUserSet);
+                Objects.equals(userSet, subject.userSet);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, oldUserSet);
+        return Objects.hash(id, name, userSet);
     }
 
     public Long getId() {
@@ -43,12 +43,12 @@ public class Subject {
         this.name = name;
     }
 
-    public Set<OldUser> getUserSet() {
-        return oldUserSet;
+    public Set<User> getUserSet() {
+        return userSet;
     }
 
-    public void setUserSet(Set<OldUser> oldUserSet) {
-        this.oldUserSet = oldUserSet;
+    public void setUserSet(Set<User> userSet) {
+        this.userSet = userSet;
     }
 
     private String name;
@@ -59,5 +59,5 @@ public class Subject {
             joinColumns = { @JoinColumn(name = "subject_id") },
             inverseJoinColumns = { @JoinColumn(name = "user_id") }
     )
-    Set<OldUser> oldUserSet = new HashSet<>();
+    Set<User> userSet = new HashSet<>();
 }
