@@ -83,7 +83,7 @@ public class OldUser {
         this.id = id;
     }
 
-    @OneToMany(mappedBy="user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="oldUser", cascade = CascadeType.ALL)
     private Set<Order> orders;
 //    @ManyToOne
 //    @JoinColumn(name="order_id", nullable=false)
